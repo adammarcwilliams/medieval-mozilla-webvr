@@ -1,6 +1,5 @@
 {% set title = "Medieval Mozilla WebVR" %}
-
-{% extends "layouts/default.tmpl" %}
+{% extends "layouts/scene.tmpl" %}
 
 {% block scripts %}
 <script src="vendor/aframe-v0.7.1.min.js"></script>
@@ -26,6 +25,8 @@
 <a-asset-item id="stairsGLTF" src="assets/models/wrath_of_the_dragon_stairs/scene.gltf"></a-asset-item>
 <a-asset-item id="castleGLTF" src="assets/models/wrath_of_the_dragon_castle/scene.gltf"></a-asset-item>
 <a-asset-item id="stairs2GLTF" src="assets/models/wrath_of_the_dragon_stairs2/scene.gltf"></a-asset-item>
+<a-asset-item id="torch1GLTF" src="assets/models/wrath_of_the_dragon_torch1/scene.gltf"></a-asset-item>
+<a-asset-item id="fire2GLTF" src="assets/models/wrath_of_the_dragon_fire2/scene.gltf"></a-asset-item>
 <a-asset-item id="flag1GLTF" src="assets/models/wrath_of_the_dragon_flag1/scene.gltf"></a-asset-item>
 <a-asset-item id="flag2GLTF" src="assets/models/wrath_of_the_dragon_flag2/scene.gltf"></a-asset-item>
 <a-asset-item id="flagPoleGLTF" src="assets/models/wrath_of_the_dragon_flagpole/scene.gltf"></a-asset-item>
@@ -35,38 +36,78 @@
 
 {% block entitys %}
 
-<a-entity
-    id="vikingLongship"
-    gltf-model="#vikingLongshipGLTF"
-    position="-40 -12 30"
-    rotation="0 -70 0"
-    scale="2 2 2"
-    animation__bob="property: position; dir: alternate; dur: 2000; easing: easeInSine; loop: true; to: -40 -12.5 30"></a-entity>
-<a-entity
-    id="vikingLongshipWreck"
-    gltf-model="#vikingLongshipWreckGLTF"
-    position="32 -13 48"
-    rotation="0 -134 0"
-    scale="2 2 2"></a-entity>
-<a-entity id="castle" gltf-model="#castleGLTF" position="0 0 0"></a-entity>
-<a-entity id="stairs2" gltf-model="#stairs2GLTF" position="0 0 0"></a-entity>
-<a-entity id="flagPole" gltf-model="#flagPoleGLTF" position="0 0 0"></a-entity>
-<a-entity id="flag2" gltf-model="#flag2GLTF" position="0 0 0"></a-entity>
-<a-entity id="flag1" gltf-model="#flag1GLTF" position="0 0 0"></a-entity>
-<a-entity id="tower6" gltf-model="#tower6GLTF" position="0 0 0"></a-entity>
-<a-entity id="tower4" gltf-model="#tower4GLTF" position="0 0 0"></a-entity>
-<a-entity id="tower3" gltf-model="#tower3GLTF" position="0 0 0"></a-entity>
-<a-entity id="tower2" gltf-model="#tower2GLTF" position="0 0 0"></a-entity>
-<a-entity id="wall" gltf-model="#wallGLTF" position="0 0 0"></a-entity>
-<a-entity id="woodBridge" gltf-model="#woodBridgeGLTF" position="0 0 0"></a-entity>
-<a-entity id="bridgeFull" gltf-model="#bridgeFullGLTF" position="0 0 0"></a-entity>
-<a-entity id="tower1" gltf-model="#tower1GLTF" position="0 0 0"></a-entity>
-<a-entity id="stairs" gltf-model="#stairsGLTF" position="0 0 0"></a-entity>
+<a-entity id="vikingLongships">
+    <a-entity
+        id="vikingLongship0"
+        gltf-model="#vikingLongshipGLTF"
+        position="-40 -12 150"
+        rotation="0 -15 0"
+        scale="2 2 2"
+        ></a-entity>
+    <a-entity
+        id="vikingLongship1"
+        gltf-model="#vikingLongshipGLTF"
+        position="47.512 -12 170"
+        rotation="0 15 0"
+        scale="2 2 2"
+    ></a-entity>
+    <a-entity
+        id="vikingLongship2"
+        gltf-model="#vikingLongshipGLTF"
+        position="0 -12 180"
+        rotation="0 -5 0"
+        scale="2 2 2"
+    ></a-entity>
+    <a-entity
+        id="vikingLongship3"
+        gltf-model="#vikingLongshipGLTF"
+        position="-27.411 -12 100.983"
+        rotation="0 -66.520 0"
+        scale="2 2 2"
+    ></a-entity>
+    <a-entity
+        id="vikingLongshipWreck"
+        gltf-model="#vikingLongshipWreckGLTF"
+        position="0.025 -13 117"
+        rotation="0 -158 0"
+        scale="2 2 2"></a-entity>
+</a-entity>
+<a-entity id="towerCastle">
+    <a-entity id="castle" gltf-model="#castleGLTF" position="0 0 0"></a-entity>
+    <a-entity id="flag2" gltf-model="#flag2GLTF" position="0 0 0"></a-entity>
+    <a-entity id="stairs2" gltf-model="#stairs2GLTF" position="0 0 0"></a-entity>
+</a-entity>
+<a-entity id="towerWall">
+    <a-entity id="flag1LowerLeft" gltf-model="#flag1GLTF" position="0 0 0"></a-entity>
+    <a-entity id="flag1LowerRight" gltf-model="#flag1GLTF" position="19.7 0 0"></a-entity>
+    <a-entity id="flag1UpperLeft" gltf-model="#flag1GLTF" position="-3.584 14.853 -6.710"></a-entity>
+    <a-entity id="flag1UpperRight" gltf-model="#flag1GLTF" position="23.372 14.853 -6.710"></a-entity>
+    <a-entity id="tower6Left" gltf-model="#tower6GLTF" position="0 0 0"></a-entity>
+    <a-entity id="tower6Right" gltf-model="#tower6GLTF" position="20 0 0"></a-entity>
+    <a-entity id="tower4" gltf-model="#tower4GLTF" position="0 0 0"></a-entity>
+    <a-entity id="tower3Left" gltf-model="#tower3GLTF" position="0 0 0"></a-entity>
+    <a-entity id="torch1Left" gltf-model="#torch1GLTF" position="0 0 0"></a-entity>
+    <a-entity id="fire2Left" gltf-model="#fire2GLTF" position="0 0 0"></a-entity>
+    <a-entity id="torch1Right" gltf-model="#torch1GLTF" position="112 0 0"></a-entity>
+    <a-entity id="fire2Right" gltf-model="#fire2GLTF" position="112 0 0"></a-entity>
+    <a-entity id="tower3Right" gltf-model="#tower3GLTF" position="112 0 0"></a-entity>
+    <a-entity id="tower2Left" gltf-model="#tower2GLTF" position="0 0 0"></a-entity>
+    <a-entity id="tower2Right" gltf-model="#tower2GLTF" position="27 0 0"></a-entity>
+    <a-entity id="wallLeft" gltf-model="#wallGLTF" position="0 0 0"></a-entity>
+    <a-entity id="wallRight" gltf-model="#wallGLTF" position="70 0 0"></a-entity>
+    <a-entity id="woodBridge" gltf-model="#woodBridgeGLTF" position="0 0 0"></a-entity>
+</a-entity>
+<a-entity id="towerBridge">
+    <a-entity id="flagPole" gltf-model="#flagPoleGLTF" position="0 0 0"></a-entity>
+    <a-entity id="bridgeFull" gltf-model="#bridgeFullGLTF" position="0 0 0"></a-entity>
+    <a-entity id="tower1" gltf-model="#tower1GLTF" position="0 0 0"></a-entity>
+    <a-entity id="stairs" gltf-model="#stairsGLTF" position="0 0 0"></a-entity>
+</a-entity>
 <a-entity id="terrain" gltf-model="#terrainGLTF" position="0 0 0"></a-entity>
-<a-entity id="ocean" ocean="density: 20; width: 250; depth: 75; speed: 4" rotation="-90 0 0" position="0 -12 48"></a-entity>
+<a-entity id="ocean" ocean="density: 20; width: 250; depth: 250; speed: 4" rotation="-90 0 0" position="0 -12 110"></a-entity>
 <a-gradient-sky material="shader: gradient; topColor: 92 49 58; bottomColor: 61 33 39;"></a-gradient-sky>
 
-<a-entity id="cameraRig" position="-72 22 87">
+<a-entity id="cameraRig" position="0 0 170">
     <a-entity id="head" camera wasd-controls look-controls></a-entity>
     <a-entity id="teleHand" hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; type: parabolic; button: trigger; collisionEntities: #terrain, #bridgeFull"></a-entity>
     <a-entity id="blockHand" hand-controls="right"></a-entity>
