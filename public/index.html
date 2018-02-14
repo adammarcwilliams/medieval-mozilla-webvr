@@ -40,6 +40,18 @@
 <a-asset-item id="vikingLongshipWreckGLTF" src="assets/models/viking_longship_wreck/scene.gltf"></a-asset-item>
 <a-asset-item id="batteringRamGLTF" src="assets/models/battering_ram_siege_equipment_assets/scene.gltf"></a-asset-item>
 <a-asset-item id="catapultGLTF" src="assets/models/mangonel_siege_equipment_assets/scene.gltf"></a-asset-item>
+<a-asset-item id="thorGLTF" src="assets/models/thor_thunder_god/scene.gltf"></a-asset-item>
+<a-asset-item id="amazedVikingGLTF" src="assets/models/amazed_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="bargingVikingGLTF" src="assets/models/barging_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="choppingVikingGLTF" src="assets/models/chopping_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="dangelingVikingGLTF" src="assets/models/dangeling_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="deadVikingGLTF" src="assets/models/dead_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="driftingVikingGLTF" src="assets/models/drifting_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="hangingVikingGLTF" src="assets/models/hanging_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="pointingVikingGLTF" src="assets/models/pointing_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="pullingVikingGLTF" src="assets/models/pulling_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="shootingVikingGLTF" src="assets/models/shooting_viking/scene.gltf"></a-asset-item>
+<a-asset-item id="swimmingVikingGLTF" src="assets/models/swimming_viking/scene.gltf"></a-asset-item>
 
     </a-assets>
     
@@ -61,13 +73,13 @@
         rotation="0 15 0"
         scale="2 2 2"
     ></a-entity>
-    <a-entity
-        id="vikingLongship2"
-        gltf-model="#vikingLongshipGLTF"
-        position="0 -12 180"
-        rotation="0 -5 0"
-        scale="2 2 2"
-    ></a-entity>
+    <a-entity id="vikingLongship2" gltf-model="#vikingLongshipGLTF" position="0 -12 180" rotation="0 -5 0" scale="2 2 2">
+        <a-entity id="thor1" gltf-model="#thorGLTF" position="14 2.154 -10" rotation="0 15 0"></a-entity>
+        <a-entity id="amazedViking1" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
+        <a-entity id="bargingViking1" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
+        <a-entity id="choppingViking1" gltf-model="#choppingVikingGLTF" position="11 1.89 3.9" rotation="0 0 0"></a-entity>
+        <a-entity id="dangelingViking1" gltf-model="#dangelingVikingGLTF" position="8 3.2 -8.2" rotation="0 0 0"></a-entity>
+    </a-entity>
     <a-entity
         id="vikingLongship3"
         gltf-model="#vikingLongshipGLTF"
@@ -82,6 +94,7 @@
         rotation="0 -158 0"
         scale="2 2 2"></a-entity>
 </a-entity>
+
 <a-entity id="towerCastle">
     <a-entity id="castle" gltf-model="#castleGLTF" position="0 0 0"></a-entity>
     <a-entity id="flag2" gltf-model="#flag2GLTF" position="0 0 0"></a-entity>
