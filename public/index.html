@@ -14,7 +14,7 @@
 
 <script type="text/javascript" src="assets/index.js"></script></head>
 <body>
-  <a-scene fog="type: linear; color: #cfc; far: 300; density: 10">
+  <a-scene stats fog="type: linear; color: #cfc; far: 300; density: 10">
     <a-assets>
       
 <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
@@ -59,34 +59,36 @@
 
 <a-entity id="catapult" gltf-model="#catapultGLTF" position="-3.460 20.177 62.255" rotation="0 19.27 0" scale="4 4 4"></a-entity>
 <a-entity id="vikingLongships">
-    <a-entity
-        id="vikingLongship0"
-        gltf-model="#vikingLongshipGLTF"
-        position="-40 -12 150"
-        rotation="0 -15 0"
-        scale="2 2 2"
-        ></a-entity>
-    <a-entity
-        id="vikingLongship1"
-        gltf-model="#vikingLongshipGLTF"
-        position="47.512 -12 170"
-        rotation="0 15 0"
-        scale="2 2 2"
-    ></a-entity>
+    <a-entity id="vikingLongship0" gltf-model="#vikingLongshipGLTF" position="-40 -12 150" rotation="0 -15 0" scale="2 2 2">
+        <a-entity id="amazedViking1Ship0" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
+        <a-entity id="bargingViking1Ship0" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
+        <a-entity id="choppingViking1Ship0" gltf-model="#choppingVikingGLTF" position="11 1.89 3.9" rotation="0 0 0"></a-entity>
+        <a-entity id="dangelingViking1Ship0" gltf-model="#dangelingVikingGLTF" position="8 3.2 -8.2" rotation="0 0 0"></a-entity>
+        <a-entity id="driftingViking1Ship0" gltf-model="#driftingVikingGLTF" position="0 1.756 1" rotation="0 0 0"></a-entity>
+        <a-entity id="hangingViking1Ship0" gltf-model="#hangingVikingGLTF" position="-19.208 3.045 6.643" rotation="0 0 0"></a-entity>
+        <a-entity id="pointingViking1Ship0" gltf-model="#pointingVikingGLTF" position="12.147 1.670 -3" rotation="0 0 0"></a-entity>
+    </a-entity>
+    <a-entity id="vikingLongship1" gltf-model="#vikingLongshipGLTF" position="47.512 -12 170" rotation="0 15 0" scale="2 2 2">
+        <a-entity id="amazedViking1Ship1" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
+        <a-entity id="bargingViking1Ship1" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
+        <a-entity id="choppingViking1Ship1" gltf-model="#choppingVikingGLTF" position="11 1.89 3.9" rotation="0 0 0"></a-entity>
+        <a-entity id="dangelingViking1Ship1" gltf-model="#dangelingVikingGLTF" position="8 3.2 -8.2" rotation="0 0 0"></a-entity>
+        <a-entity id="driftingViking1Ship1" gltf-model="#driftingVikingGLTF" position="0 1.756 1" rotation="0 0 0"></a-entity>
+        <a-entity id="hangingViking1Ship1" gltf-model="#hangingVikingGLTF" position="-19.208 3.045 6.643" rotation="0 0 0"></a-entity>
+        <a-entity id="pointingViking1Ship1" gltf-model="#pointingVikingGLTF" position="12.147 1.670 -3" rotation="0 0 0"></a-entity>
+    </a-entity>
     <a-entity id="vikingLongship2" gltf-model="#vikingLongshipGLTF" position="0 -12 180" rotation="0 -5 0" scale="2 2 2">
         <a-entity id="thor1" gltf-model="#thorGLTF" position="14 2.154 -10" rotation="0 15 0"></a-entity>
-        <a-entity id="amazedViking1" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
-        <a-entity id="bargingViking1" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
-        <a-entity id="choppingViking1" gltf-model="#choppingVikingGLTF" position="11 1.89 3.9" rotation="0 0 0"></a-entity>
-        <a-entity id="dangelingViking1" gltf-model="#dangelingVikingGLTF" position="8 3.2 -8.2" rotation="0 0 0"></a-entity>
+        <a-entity id="amazedViking1Ship2" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
+        <a-entity id="bargingViking1Ship2" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
+        <a-entity id="choppingViking1Ship2" gltf-model="#choppingVikingGLTF" position="11 1.89 3.9" rotation="0 0 0"></a-entity>
+        <a-entity id="dangelingViking1Ship2" gltf-model="#dangelingVikingGLTF" position="8 3.2 -8.2" rotation="0 0 0"></a-entity>
+        <a-entity id="driftingViking1Ship2" gltf-model="#driftingVikingGLTF" position="0 1.756 1" rotation="0 0 0"></a-entity>
+        <a-entity id="hangingViking1Ship2" gltf-model="#hangingVikingGLTF" position="-19.208 3.045 6.643" rotation="0 0 0"></a-entity>
+        <a-entity id="pointingViking1Ship2" gltf-model="#pointingVikingGLTF" position="12.147 1.670 -3" rotation="0 0 0"></a-entity>
     </a-entity>
-    <a-entity
-        id="vikingLongship3"
-        gltf-model="#vikingLongshipGLTF"
-        position="-27.411 -12 100.983"
-        rotation="0 -66.520 0"
-        scale="2 2 2"
-    ></a-entity>
+    <a-entity id="vikingLongship3" gltf-model="#vikingLongshipGLTF" position="-27.411 -12 100.983" rotation="0 -66.520 0" scale="2 2 2">
+    </a-entity>
     <a-entity
         id="vikingLongshipWreck"
         gltf-model="#vikingLongshipWreckGLTF"
@@ -95,31 +97,7 @@
         scale="2 2 2"></a-entity>
 </a-entity>
 
-<a-entity id="towerCastle">
-    <a-entity id="castle" gltf-model="#castleGLTF" position="0 0 0"></a-entity>
-    <a-entity id="flag2" gltf-model="#flag2GLTF" position="0 0 0"></a-entity>
-    <a-entity id="stairs2" gltf-model="#stairs2GLTF" position="0 0 0"></a-entity>
-</a-entity>
-<a-entity id="towerWall">
-    <a-entity id="flag1LowerLeft" gltf-model="#flag1GLTF" position="0 0 0"></a-entity>
-    <a-entity id="flag1LowerRight" gltf-model="#flag1GLTF" position="19.7 0 0"></a-entity>
-    <a-entity id="flag1UpperLeft" gltf-model="#flag1GLTF" position="-3.584 14.853 -6.710"></a-entity>
-    <a-entity id="flag1UpperRight" gltf-model="#flag1GLTF" position="23.372 14.853 -6.710"></a-entity>
-    <a-entity id="tower6Left" gltf-model="#tower6GLTF" position="0 0 0"></a-entity>
-    <a-entity id="tower6Right" gltf-model="#tower6GLTF" position="20 0 0"></a-entity>
-    <a-entity id="tower4" gltf-model="#tower4GLTF" position="0 0 0"></a-entity>
-    <a-entity id="tower3Left" gltf-model="#tower3GLTF" position="0 0 0"></a-entity>
-    <a-entity id="torch1Left" gltf-model="#torch1GLTF" position="0 0 0"></a-entity>
-    <a-entity id="fire2Left" gltf-model="#fire2GLTF" position="0 0 0"></a-entity>
-    <a-entity id="torch1Right" gltf-model="#torch1GLTF" position="112 0 0"></a-entity>
-    <a-entity id="fire2Right" gltf-model="#fire2GLTF" position="112 0 0"></a-entity>
-    <a-entity id="tower3Right" gltf-model="#tower3GLTF" position="112 0 0"></a-entity>
-    <a-entity id="tower2Left" gltf-model="#tower2GLTF" position="0 0 0"></a-entity>
-    <a-entity id="tower2Right" gltf-model="#tower2GLTF" position="27 0 0"></a-entity>
-    <a-entity id="wallLeft" gltf-model="#wallGLTF" position="0 0 0"></a-entity>
-    <a-entity id="wallRight" gltf-model="#wallGLTF" position="70 0 0"></a-entity>
-    <a-entity id="woodBridge" gltf-model="#woodBridgeGLTF" position="0 0 0" rotation="-5 0 0"></a-entity>
-</a-entity>
+
 <a-entity id="towerBridge">
     <a-entity id="flagPole" gltf-model="#flagPoleGLTF" position="0 0 0"></a-entity>
     <a-entity id="bridgeFull" gltf-model="#bridgeFullGLTF" position="0 0 0"></a-entity>
