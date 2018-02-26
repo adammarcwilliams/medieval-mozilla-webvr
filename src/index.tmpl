@@ -5,9 +5,14 @@
 <script src="vendor/aframe-v0.7.1.min.js"></script>
 <script src="vendor/aframe-teleport-controls.min.js"></script>
 <script src="vendor/aframe-animation-component-v3.2.5.min.js"></script>
+<script src="vendor/aframe-alongpath-component.js"></script>
+<script src="vendor/aframe-curve-component.min.js"></script>
 <script src="vendor/aframe-gltf-part-component.min.js"></script>
 <script src="vendor/aframe-extras.min.js"></script>
 <script src="vendor/aframe-gradientsky.min.js"></script>
+<script src="vendor/aframe-look-at-component.min.js"></script>
+<script src="vendor/aframe-event-set-component.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 {% endblock %}
 
 {% block assets %}
@@ -30,6 +35,7 @@
 <a-asset-item id="flag1GLTF" src="assets/models/wrath_of_the_dragon_flag1/scene.gltf"></a-asset-item>
 <a-asset-item id="flag2GLTF" src="assets/models/wrath_of_the_dragon_flag2/scene.gltf"></a-asset-item>
 <a-asset-item id="flagPoleGLTF" src="assets/models/wrath_of_the_dragon_flagpole/scene.gltf"></a-asset-item>
+<a-asset-item id="rock1GLTF" src="assets/models/wrath_of_the_dragon_rock1/scene.gltf"></a-asset-item>
 <a-asset-item id="vikingLongshipGLTF" src="assets/models/viking_longship/scene.gltf"></a-asset-item>
 <a-asset-item id="vikingLongshipWreckGLTF" src="assets/models/viking_longship_wreck/scene.gltf"></a-asset-item>
 <a-asset-item id="batteringRamGLTF" src="assets/models/battering_ram_siege_equipment_assets/scene.gltf"></a-asset-item>
@@ -48,12 +54,12 @@
 <a-asset-item id="swimmingVikingGLTF" src="assets/models/swimming_viking/scene.gltf"></a-asset-item>
 <a-asset-item id="fighterGLTF" src="assets/models/fighter/scene.gltf"></a-asset-item>
 <a-asset-item id="archerGLTF" src="assets/models/archer/scene.gltf"></a-asset-item>
+<audio id="catapultSound" src="assets/audio/253203__robinhood76__05455-catapult-shot.mp3" ></audio>
 {% endblock %}
 
 {% block entitys %}
 
 {# <a-entity id="batteringRam" gltf-model="#batteringRamGLTF" position="0.3 2.5 20" rotation="0 180 0" scale="4 4 4"></a-entity> #}
-<a-entity id="catapult" gltf-model="#catapultGLTF" position="3.460 20.177 62.255" rotation="0 -19.27 0" scale="4 4 4"></a-entity>
 <a-entity id="fighter1Shore" gltf-model="#fighterGLTF" position="0 0 64.766" rotation="0 0 0" scale="0.03 0.03 0.03"></a-entity>
 <a-entity id="fighter2Shore" gltf-model="#fighterGLTF" position="-0.778 19.092 62.001" rotation="0 65 0" scale="0.03 0.03 0.03"></a-entity>
 <a-entity id="bargingViking1Shore" gltf-model="#bargingVikingGLTF" position="45.856 -2.162 77.386" rotation="0 0 0" scale="2 2 2"></a-entity>
@@ -61,7 +67,7 @@
 <a-entity id="choppingViking1Shore" gltf-model="#choppingVikingGLTF" position="21.896 0.373 71.566" rotation="0 0 0" scale="2 2 2"></a-entity>
 
 <a-entity id="vikingLongships">
-    <a-entity id="vikingLongship0" gltf-model="#vikingLongshipGLTF" position="-37.526 -12 127.224" rotation="0 -25 0" scale="2 2 2">
+    <a-entity id="vikingLongship0" gltf-model="#vikingLongshipGLTF" position="-37.526 -12 127.224" rotation="0 -25 0" scale="2 2 2" sound="src: url(/assets/audio/sailboat_with_waves_2.L.wav); autoplay: true; loop: true">
         <a-entity id="amazedViking1Ship0" gltf-model="#amazedVikingGLTF" position="7.8 1.4 -1" rotation="0 0 0"></a-entity>
         <a-entity id="amazedViking2Ship0" gltf-model="#amazedVikingGLTF" position="9.812 1.4 1.5" rotation="0 0 0"></a-entity>
         <a-entity id="bargingViking1Ship0" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
@@ -70,14 +76,14 @@
         <a-entity id="hangingViking1Ship0" gltf-model="#hangingVikingGLTF" position="-19.208 3.045 6.643" rotation="0 0 0"></a-entity>
         <a-entity id="pointingViking1Ship0" gltf-model="#pointingVikingGLTF" position="12.757 1.9 -6" rotation="0 0 0"></a-entity>
     </a-entity>
-    <a-entity id="vikingLongship2" gltf-model="#vikingLongshipGLTF" position="-10.523 -12 148.417" rotation="0 -5 0" scale="2 2 2">
+    <a-entity id="vikingLongship2" gltf-model="#vikingLongshipGLTF" position="-10.523 -12 148.417" rotation="0 -5 0" scale="2 2 2" sound="src: url(/assets/audio/rowing_boat.R.wav); autoplay: true; loop: true">
         <a-entity id="thor1" gltf-model="#thorGLTF" position="14 2.154 -10" rotation="0 15 0"></a-entity>
         <a-entity id="amazedViking1Ship2" gltf-model="#amazedVikingGLTF" position="7.706 1.4 -2.076" rotation="0 0 0"></a-entity>
         <a-entity id="amazedViking2Ship2" gltf-model="#amazedVikingGLTF" position="9.464 1.4 6" rotation="0 0 0"></a-entity>
         <a-entity id="bargingViking1Ship2" gltf-model="#bargingVikingGLTF" position="22.65 1.89 -3" rotation="0 0 0"></a-entity>
         <a-entity id="pointingViking1Ship2" gltf-model="#pointingVikingGLTF" position="12.430 1.670 1.450" rotation="0 0 0"></a-entity>
     </a-entity>
-    <a-entity id="vikingLongshipWreck" gltf-model="#vikingLongshipWreckGLTF" position="0.025 -13 117" rotation="0 -158 0" scale="2 2 2">
+    <a-entity id="vikingLongshipWreck" gltf-model="#vikingLongshipWreckGLTF" position="0.025 -13 117" rotation="0 -158 0" scale="2 2 2" sound="src: url(/assets/audio/72_Creaks_Slow_Rocking_Wooden Boat.L.wav); autoplay: true; loop: true">
         <a-entity id="hangingViking1ShipWreck" gltf-model="#hangingVikingGLTF" position="8.164 4.350 -3.926" rotation="0 180 0"></a-entity>
         <a-entity id="swimmingViking1ShipWreck" gltf-model="#swimmingVikingGLTF" position="-24.494 0.5 -2.889" rotation="15 180 0"></a-entity>
     </a-entity>
@@ -109,6 +115,43 @@
 </a-entity>
 <a-entity id="towerBridge">
     {# <a-entity id="flagPole" gltf-model="#flagPoleGLTF" position="0 0 0"></a-entity> #}
+    <a-entity id="catapult"
+        gltf-model="#catapultGLTF"
+        position="3.460 20.177 62.255"
+        rotation="0 -19.27 0"
+        scale="4 4 4"
+        sound="src: url(/assets/audio/253203__robinhood76__05455-catapult-shot.wav)"
+        >
+        <a-entity id="catapultUI"
+            catapult-listener="catapult: #catapult; projectile: #catapultRock"
+            geometry="primitive: box"
+            material="color: blue; shader: flat"
+            position="0 2 0"
+            look-at="#cameraRig"
+            event-set__enter="_event: mouseenter; material.color: red"
+            event-set__leave="_event: mouseleave; material.color: blue"
+            event-set__down="_event: mousedown; material.color: yellow"
+            ></a-entity>
+            <a-entity
+            id="target"
+            geometry="primitive: box"
+            material="color: blue; shader: flat"
+            position="4 2 0"
+            look-at="#cameraRig"
+            ></a-entity>
+        <a-entity id="catapultRock"
+            scale="0.2 0.2 0.2"
+            sound="src: url(/assets/audio/17_Rock_Water_Large_Rock_Thrown_Into_Water.L.wav)"
+            alongpath="curve: #catapultCurve; animate: false; progress: 0">
+            <a-entity id="catapultRockModel" gltf-model="#rock1GLTF" position="58.930 0 36.430"></a-entity>
+        </a-entity>
+        <a-curve id="catapultCurve">
+            <a-curve-point position="0 0.7 0"></a-curve-point>
+            <a-curve-point position="-0.5 2 5"></a-curve-point>
+            <a-curve-point position="-0.5 -8 20"></a-curve-point>
+        </a-curve>
+        {# <a-draw-curve curveref="#catapultCurve" material="shader: line; color: blue;"></a-draw-curve> #}
+    </a-entity>
     <a-entity id="bridgeFull" gltf-model="#bridgeFullGLTF" position="0 0 0"></a-entity>
     <a-entity id="tower1" gltf-model="#tower1GLTF" position="0 0 0"></a-entity>
     <a-entity id="stairs" gltf-model="#stairsGLTF" position="0 0 0"></a-entity>
@@ -121,13 +164,13 @@
 <a-entity id="cameraRig" position="-25 -10 138" rotation="0 -25 0">
     <a-entity id="head" camera="near: 0.1; far: 10000" wasd-controls look-controls></a-entity>
     <a-entity id="teleHand" hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; type: parabolic; button: trigger; collisionEntities: #terrain, #bridgeFull"></a-entity>
-    <a-entity id="blockHand" hand-controls="right"></a-entity>
+    <a-entity id="pointerHand" hand-controls="right" cursor raycaster="showLine: true"></a-entity>
 </a-entity>
 
 {# <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 1"></a-entity> #}
 <a-entity light="type: ambient; color: #61a0a3; intensity: 0.5"></a-entity>
 <a-entity light="type: directional; color: #EEE; intensity: 0.5" position="-1 0 0"></a-entity>
-<a-entity id="fireLightLeft" light="type: point; color: #FFA500; intensity: 0.5" position="-55.611 25.924 -8.279"></a-entity> // TODO: Light Flicker
+<a-entity id="fireLightLeft" light="type: point; color: #FFA500; intensity: 0.5" position="-55.611 25.924 -8.279"></a-entity>
 <a-entity id="fireLightRight" light="type: point; color: #FFA500; intensity: 0.5" position="56.324 25.924 -8.279"></a-entity>
 
 
