@@ -2,9 +2,9 @@
 {% extends "layouts/scene.tmpl" %}
 
 {% block scripts %}
-<script src="vendor/aframe-v0.7.1.min.js"></script>
+<script src="vendor/aframe-v0.8.0.min.js"></script>
 <script src="vendor/aframe-teleport-controls.min.js"></script>
-<script src="vendor/aframe-animation-component-v3.2.5.min.js"></script>
+<script src="vendor/aframe-animation-component.min.js"></script>
 <script src="vendor/aframe-alongpath-component.js"></script>
 <script src="vendor/aframe-curve-component.min.js"></script>
 <script src="vendor/aframe-gltf-part-component.min.js"></script>
@@ -141,8 +141,14 @@
             ></a-entity>
         <a-entity id="catapultRock"
             scale="0.2 0.2 0.2"
-            sound="src: url(/assets/audio/17_Rock_Water_Large_Rock_Thrown_Into_Water.L.wav)"
-            alongpath="curve: #catapultCurve; animate: false; progress: 0">
+            sound="src: url(/assets/audio/splash.wav)"
+            alongpath="curve: #catapultCurve; animate: false; progress: 0"
+            animation="startEvents: fire; property: alongpath.progress; dur: 2000; easing: easeInSine; to: 1"
+            visible="false"
+            event-set__animationbegin="_event: animationbegin; visible: true"
+            event-set__animationcomplete="_event: animationcomplete; visible: false; sound.playSound: true"
+            >
+            {# replace event-sets with a custom component "rock-listener" #}
             <a-entity id="catapultRockModel" gltf-model="#rock1GLTF" position="58.930 0 36.430"></a-entity>
         </a-entity>
         <a-curve id="catapultCurve">

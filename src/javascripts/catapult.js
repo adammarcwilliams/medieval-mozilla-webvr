@@ -23,11 +23,13 @@ AFRAME.registerComponent('catapult-listener', {
 
       // Play sound on catapult
       this.data.catapult.components.sound.playSound();
+
+      this.data.projectile.emit('fire');
       
-      TweenMax.set(this.data.projectile.components.alongpath.data, {progress: 0});
-      TweenMax.to(this.data.projectile.components.alongpath.data, 2, {progress: 1, ease: Power0.easeNone, onComplete: () => {
-        this.data.projectile.components.sound.playSound();
-      }});
+      // TweenMax.set(this.data.projectile.components.alongpath.data, {progress: 0});
+      // TweenMax.to(this.data.projectile.components.alongpath.data, 2, {progress: 1, ease: Power0.easeNone, onComplete: () => {
+      //   this.data.projectile.components.sound.playSound();
+      // }});
     },
 
     tick: function () {
